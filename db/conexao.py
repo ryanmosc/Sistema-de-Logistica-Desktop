@@ -7,7 +7,7 @@ def conectar():
             dbname="sistema_db",
             user="postgres",           
             password="q1w2e3", 
-            host="192.168.1.72",
+            host="localhost", #192.168.1.72
             port="5432"
         )
         print("[OK] Conexão estabelecida com sucesso!, Ação bem sucedida!")

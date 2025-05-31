@@ -4,15 +4,15 @@ import os
 
 def enviar_email(arquivo_excel):
     EMAIL_REMETENTE = 'ryanoliveiramosc.com.098@gmail.com'
-    EMAIL_DESTINATARIO = 'aisabelaalves.pedi@gmail.com'
-    SENHA_APP = 'uujvweftpdjcqrhm'
+    EMAIL_DESTINATARIO = 'email-destinatario'
+    SENHA_APP = 'senha_sua (boa sorte para conseguir a sua)'
 
     # Criar a mensagem de e-mail
     mensagem = EmailMessage()
     mensagem['Subject'] = 'Relatório Automático'
     mensagem['From'] = EMAIL_REMETENTE
     mensagem['To'] = EMAIL_DESTINATARIO
-    mensagem.set_content('Olá Luciano,\n\nSegue o relatório gerado automaticamente de produtos com estoque baixo.\n\nAtt,\nRyan')
+    mensagem.set_content('Olá Senhor meu chefe,\n\nSegue o relatório gerado automaticamente de produtos com estoque baixo.\n\nAtt,\nRyan')
 
     # Adiciona o anexo
     with open(arquivo_excel, 'rb') as file:

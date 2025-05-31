@@ -183,7 +183,7 @@ def exibir_entradas(janela):
     frame_tabela.pack(pady=10)
 
     colunas = ("Id", "nome_produto", "fornecedor", "quantidade", "preco_custo", "preco_venda",
-               "data_entrada", "arquivo_xml_pdf")
+               "data_entrada")
     tabela = ttk.Treeview(frame_tabela, columns=colunas, show="headings")
 
     for col in colunas:

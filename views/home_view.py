@@ -1,9 +1,9 @@
+# views/home_view.py
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import requests
-import datetime
-
+from metricas.metricas_views.ler_view_metricas import abrir_dashboard  # Correct import
 from estoque.views_estoque.ler_view import exibir_tela_pesquisa
 from funcionarios.views_funcionarios.ler_view import exibir_tela_funcionarios
 from saidas.views_saidas.ler_view_saidas import abrir_tela_saidas
@@ -56,7 +56,7 @@ def criar_tela_inicial():
         "📚 Estoque": lambda: exibir_tela_pesquisa(janela),
         "👥 Funcionários": lambda: exibir_tela_funcionarios(janela),
         "📤 Saídas": lambda: abrir_tela_saidas(janela),
-        "ℹ Sobre": lambda: abrir_sobre(janela),
+        "ℹ Metricas": lambda: abrir_dashboard(),  # Remove janela parameter
         "✔ Verificação": verificar_estoque_baixo,
         "🚪 Sair": sair
     }
@@ -69,15 +69,9 @@ def criar_tela_inicial():
             pady=10, anchor="w", command=comando,
             borderwidth=0
         )
-        # Hover effect
         btn.bind("<Enter>", lambda e, b=btn: b.config(bg="#3498db"))
         btn.bind("<Leave>", lambda e, b=btn: b.config(bg="#34495e"))
         btn.pack(fill="x", pady=5, padx=10)
-
-
-
-    # Placeholder para o gráfico (descomente para ativar)
-    # exibir_grafico_barras(area_principal)
 
     # ==== Rodapé ====
     rodape = tk.Frame(janela, bg="#dfe6e9", height=30)
@@ -111,3 +105,6 @@ def criar_tela_inicial():
     label_cotacao.pack(side="right", padx=10)
 
     janela.mainloop()
+
+if __name__ == "__main__":
+    criar_tela_inicial()
